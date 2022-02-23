@@ -31,7 +31,6 @@ public class ParameterizedTests {
                 Arguments.of("TestFirst","Ivanov", "654321")
         );
     }
-
     @MethodSource(value = "mixedArgumentsTestDataProvider")
     @ParameterizedTest(name = "Проверка формы добавления клиента")
     void addNewCustomerTest(String firstArg, String secondArg, String postCodeValue) {
@@ -45,7 +44,6 @@ public class ParameterizedTests {
         //Проверка в таблице customers что новый клиент добавился
         $("button[ng-click='showCust()']").click();
         $(".table-bordered").scrollTo().shouldHave(text(firstArg), text(secondArg), text(postCodeValue));
-        //$(".marTop").scrollTo().shouldHave(text(firstArg), text("secondArg"), text(postCodeValue));
     }
 
     @ValueSource(strings = {"Harry Potter", "Ron Weasly"})
