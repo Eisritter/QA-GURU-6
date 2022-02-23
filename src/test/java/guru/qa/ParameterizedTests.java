@@ -43,7 +43,7 @@ public class ParameterizedTests {
         $(".btn-default").click();
         //Проверка в таблице customers что новый клиент добавился
         $("button[ng-click='showCust()']").click();
-        $(".table-bordered").scrollTo().shouldHave(text(firstArg), text(secondArg), text(postCodeValue));
+        $(".table-bordered").shouldHave(text(firstArg), text(secondArg), text(postCodeValue));
     }
 
     @ValueSource(strings = {"Harry Potter", "Ron Weasly"})
